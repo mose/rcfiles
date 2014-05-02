@@ -48,3 +48,13 @@ ln -s .vim/easy-vimrc $HOME/.vimrc
 echo -n "What email should we forward to ? "
 read email
 echo "$email" > $HOME/.forward
+
+# some bin/ utils
+mkdir bin
+curl -o $HOME/bin/getswap \
+  https://raw.githubusercontent.com/mose/config/master/bin/getswap
+curl -o $HOME/bin/ps_mem \
+  https://raw.githubusercontent.com/mose/config/master/bin/ps_mem
+curl -o $HOME/bin/ps_mem.py \
+  https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
+chmod +x $HOME/bin/getswap $HOME/bin/ps_mem.py $HOME/bin/ps_mem
