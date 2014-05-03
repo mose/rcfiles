@@ -1,5 +1,13 @@
 # FreeAgent puts the powerline style in zsh !
 
+if [ "$POWERLINE_FG" = "" ]; then
+  POWERLINE_FG="%F{black}"
+fi
+if [ "$POWERLINE_BG" = "" ]; then
+  POWERLINE_BG="%F{187}"
+fi
+
+
 if [ "$POWERLINE_DATE_FORMAT" = "" ]; then
   POWERLINE_DATE_FORMAT=%D{%Y-%m-%d}
 fi
@@ -102,10 +110,10 @@ if [ $(id -u) -eq 0 ]; then
     POWERLINE_SEC1_BG=%K{red}
     POWERLINE_SEC1_FG=%F{red}
 else
-    POWERLINE_SEC1_BG=%K{green}
-    POWERLINE_SEC1_FG=%F{green}
+    POWERLINE_SEC1_BG=$POWERLINE_BG
+    POWERLINE_SEC1_FG=$POWERLINE_BG
 fi
-POWERLINE_SEC1_TXT=%F{black}
+POWERLINE_SEC1_TXT=$POWERLINE_FG
 if [ "$POWERLINE_DETECT_SSH" != "" ]; then
   if [ -n "$SSH_CLIENT" ]; then
     POWERLINE_SEC1_BG=%K{red}

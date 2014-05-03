@@ -1,5 +1,30 @@
 #!/bin/bash
 
+TERM=xterm-256color
+BG="187"
+FG="black"
+
+ask_color() {
+  echo "What color do you want for the prompt on this machine ?"
+  echo "(type 'h' for the list, fg.bg when ready where fg is foreground and bg background."
+  read col
+  if [[ "$col" == 'h' ]]; then
+    for fgbg in 38 48 ; do
+      for color in {0..256} ; do
+        echo -en "\e[${fgbg};5;${color}m ${color}\t\e[0m"
+        if [ $((($color + 1) % 10)) == 0 ] ; then
+          echo
+        fi
+      done
+      echo
+    done
+    ask_color
+  else
+    FG=${col%%.*}
+    BG=${col#*.}
+  fi
+}
+
 command -v curl &> /dev/null || sudo apt-get -y install curl
 command -v git &> /dev/null || sudo apt-get -y install git
 
@@ -12,7 +37,13 @@ curl -o $HOME/.oh-my-zsh/themes/mosepower.zsh-theme \
   https://raw.githubusercontent.com/mose/config/master/zsh/themes/mosepower.zsh-theme
 cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 sed -i 's/# DISABLE_AUTO_UPDATE="true"/DISABLE_AUTO_UPDATE="true"/' $HOME/.zshrc
-sed -i '/ZSH_THEME=/iPOWERLINE_SHOW_GIT_ON_RIGHT=1\nPOWERLINE_RIGHT_A=mixed' $HOME/.zshrc
+ask_color
+sed -i "/ZSH_THEME=/i \
+POWERLINE_SHOW_GIT_ON_RIGHT=1
+POWERLINE_RIGHT_A=mixed
+POWERLINE_FG=$FG
+POWERLINE_BG=$BG
+" $HOME/.zshrc
 sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="mose"/' $HOME/.zshrc
 
 # custom zsh things
