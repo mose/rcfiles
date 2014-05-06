@@ -32,9 +32,9 @@ command -v git &> /dev/null || sudo apt-get -y install git
 # https://github.com/robbyrussell/oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 curl -o $HOME/.oh-my-zsh/themes/mose.zsh-theme \
-  https://raw.githubusercontent.com/mose/config/master/zsh/themes/mose.zsh-theme
+  https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mose.zsh-theme
 curl -o $HOME/.oh-my-zsh/themes/mosepower.zsh-theme \
-  https://raw.githubusercontent.com/mose/config/master/zsh/themes/mosepower.zsh-theme
+  https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mosepower.zsh-theme
 cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 sed -i 's/# DISABLE_AUTO_UPDATE="true"/DISABLE_AUTO_UPDATE="true"/' $HOME/.zshrc
 ask_color
@@ -44,7 +44,7 @@ POWERLINE_RIGHT_A=mixed
 POWERLINE_FG=$FG
 POWERLINE_BG=$BG
 " $HOME/.zshrc
-sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="mose"/' $HOME/.zshrc
+sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="mosepower"/' $HOME/.zshrc
 
 # custom zsh things
 echo "
@@ -72,7 +72,8 @@ sed -i "s~git@github.com:~git://github.com/~" .gitmodules
 git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
 ./update.sh
 cd $HOME
-ln -s .vim/easy-vimrc $HOME/.vimrc
+cp .vim/easy-vimrc $HOME/.vimrc
+sed -i "s~call pathogen#incubate()~call pathogen#infect('bundle/{}')~" $HOME/.vimrc
 (crontab -l; echo "05 0 * * 0 cd $HOME/.vim && ./update.sh &> /dev/null") | crontab
 
 # setup email forward
@@ -83,9 +84,9 @@ echo "$email" > $HOME/.forward
 # some bin/ utils
 mkdir bin
 curl -o $HOME/bin/getswap \
-  https://raw.githubusercontent.com/mose/config/master/bin/getswap
+  https://raw.githubusercontent.com/mose/rcfiles/master/bin/getswap
 curl -o $HOME/bin/ps_mem \
-  https://raw.githubusercontent.com/mose/config/master/bin/ps_mem
+  https://raw.githubusercontent.com/mose/rcfiles/master/bin/ps_mem
 curl -o $HOME/bin/ps_mem.py \
   https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
 chmod +x $HOME/bin/getswap $HOME/bin/ps_mem.py $HOME/bin/ps_mem
