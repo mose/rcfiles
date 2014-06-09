@@ -63,29 +63,41 @@ sudo usermod -s /bin/zsh $USER
 # eddie vim
 # https://github.com/kaochenlong/eddie-vim
 sudo apt-get -y install exuberant-ctags
-git clone git://github.com/kaochenlong/eddie-vim.git .vim
-cd .vim
-# fix https://github.com/kaochenlong/eddie-vim/issues/9
-sed -i "s~git@github.com:~git://github.com/~" .gitmodules
-# fix https://github.com/kaochenlong/eddie-vim/pull/7
-git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
-./update.sh
-cd $HOME
-cp .vim/easy-vimrc $HOME/.vimrc
-sed -i "s~call pathogen#incubate()~call pathogen#infect('bundle/{}')~" $HOME/.vimrc
-(crontab -l; echo "05 0 * * 0 cd $HOME/.vim && ./update.sh &> /dev/null") | crontab
+
+if [ ! -d .vim ]; then
+  git clone git://github.com/kaochenlong/eddie-vim.git .vim
+  cd .vim
+  # fix https://github.com/kaochenlong/eddie-vim/issues/9
+  sed -i "s~git@github.com:~git://github.com/~" .gitmodules
+  # fix https://github.com/kaochenlong/eddie-vim/pull/7
+  git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
+  ./update.sh
+  cd $HOME
+  cp .vim/easy-vimrc $HOME/.vimrc
+  sed -i "s~call pathogen#incubate()~call pathogen#infect('bundle/{}')~" $HOME/.vimrc
+  (crontab -l; echo "05 0 * * 0 cd $HOME/.vim && ./update.sh &> /dev/null") | crontab
+fi
 
 # setup email forward
-echo -n "What email should we forward to ? "
-read email
-echo "$email" > $HOME/.forward
+if [ ! -f .forward ]; then
+  echo -n "What email should we forward to ? "
+  read email
+  echo "$email" > $HOME/.forward
+fi
 
 # some bin/ utils
-mkdir bin
-curl -o $HOME/bin/getswap \
-  https://raw.githubusercontent.com/mose/rcfiles/master/bin/getswap
-curl -o $HOME/bin/ps_mem \
-  https://raw.githubusercontent.com/mose/rcfiles/master/bin/ps_mem
-curl -o $HOME/bin/ps_mem.py \
-  https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
-chmod +x $HOME/bin/getswap $HOME/bin/ps_mem.py $HOME/bin/ps_mem
+if [ ! -d bin ]; then
+  mkdir bin
+fi
+if [ ! -f $HOME/bin/getswap ]; then
+  curl -o $HOME/bin/getswap https://raw.githubusercontent.com/mose/rcfiles/master/bin/getswap
+  chmod +x $HOME/bin/getswap
+fi
+if [ ! -f $HOME/bin/ps_mem ]; then
+  curl -o $HOME/bin/ps_mem https://raw.githubusercontent.com/mose/rcfiles/master/bin/ps_mem
+  chmod +x $HOME/bin/ps_mem
+fi
+if [ ! -f $HOME/bin/ps_mem.py ]; then
+  curl -o $HOME/bin/ps_mem.py https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
+  chmod +x $HOME/bin/ps_mem.py
+fi
