@@ -35,10 +35,8 @@ command -v git &> /dev/null || sudo apt-get -y install git
 # install oh-my-zsh and custom themes
 # https://github.com/robbyrussell/oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-curl -o $HOME/.oh-my-zsh/themes/mose.zsh-theme \
-  https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mose.zsh-theme
-curl -o $HOME/.oh-my-zsh/themes/mosepower.zsh-theme \
-  https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mosepower.zsh-theme
+curl -o $HOME/.oh-my-zsh/themes/mose.zsh-theme https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mose.zsh-theme
+curl -o $HOME/.oh-my-zsh/themes/mosepower.zsh-theme https://raw.githubusercontent.com/mose/rcfiles/master/zsh/themes/mosepower.zsh-theme
 cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 sed -i 's/# DISABLE_AUTO_UPDATE="true"/DISABLE_AUTO_UPDATE="true"/' $HOME/.zshrc
 ask_color
