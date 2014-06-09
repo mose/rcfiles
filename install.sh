@@ -8,6 +8,7 @@ ask_color() {
   echo "What color do you want for the prompt on this machine ?"
   echo "(type 'h' for the list, fg.bg when ready where fg is foreground and bg background.)"
   read col
+
   if [[ "$col" == 'h' ]]; then
     for fgbg in 38 48 ; do
       for color in {0..256} ; do
@@ -20,6 +21,9 @@ ask_color() {
     done
     ask_color
   else
+    if [[ "$col" == '' ]]; then
+      col='237.187'
+    fi
     FG=${col%%.*}
     BG=${col#*.}
   fi
