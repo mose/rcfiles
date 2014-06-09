@@ -6,7 +6,7 @@ FG="black"
 
 ask_color() {
   echo "What color do you want for the prompt on this machine ?"
-  echo "(type 'h' for the list, fg.bg when ready where fg is foreground and bg background."
+  echo "(type 'h' for the list, fg.bg when ready where fg is foreground and bg background.)"
   read col
   if [[ "$col" == 'h' ]]; then
     for fgbg in 38 48 ; do
@@ -38,12 +38,7 @@ curl -o $HOME/.oh-my-zsh/themes/mosepower.zsh-theme \
 cp $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 sed -i 's/# DISABLE_AUTO_UPDATE="true"/DISABLE_AUTO_UPDATE="true"/' $HOME/.zshrc
 ask_color
-sed -i "/ZSH_THEME=/i \
-POWERLINE_SHOW_GIT_ON_RIGHT=1
-POWERLINE_RIGHT_A=mixed
-POWERLINE_FG=$FG
-POWERLINE_BG=$BG
-" $HOME/.zshrc
+sed -i "/ZSH_THEME=/i POWERLINE_SHOW_GIT_ON_RIGHT=1\nPOWERLINE_RIGHT_A=mixed\nPOWERLINE_FG=${FG}\nPOWERLINE_BG=${BG}" $HOME/.zshrc
 sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="mosepower"/' $HOME/.zshrc
 
 # custom zsh things
