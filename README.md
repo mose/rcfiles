@@ -12,3 +12,9 @@ This will install
 - some binscripts that you always have to scp wherever you go
   - ps_mem give the real numbers about ram
   - getswap details what's up on swap usage
+
+or
+
+    bash <(curl https://raw.githubusercontent.com/mose/rcfiles/master/install-server.sh)
+
+For only installing oh-my-zsh
