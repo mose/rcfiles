@@ -1,0 +1,94 @@
+! vim: set filetype=xdefaults :
+
+Xft.autohint:   true
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintlight
+Xft.lcdfilter:  lcddefault
+
+urxvt.loginShell:       true
+urxvt.letterSpace :     -1.5
+urxvt.lineSpace:        0
+urxvt.xftAntialias:     true
+urxvt.saveLines:        12000
+
+urxvt.perl-ext-common:    default,matcher,font-size
+
+urxvt.keysym.C-plus:         perl:font-size:increase
+urxvt.keysym.C-minus:        perl:font-size:decrease
+urxvt.keysym.C-equal:        perl:font-size:reset
+
+urxvt.url-launcher:       /usr/bin/iceweasel
+urxvt.underlinedURLs:     true
+urxvt.matcher.button:     1
+urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+urxvt.cutchars:           "`()'*[]{|}""'`"
+
+urxvt.eightBitInput:      false
+urxvt.metaSendsEscape:    true
+
+urxvt.iso14755_52:      false
+urxvt.iso14755:         false
+
+urxvt.depth:            32
+urxvt.background:       black
+urxvt.foreground:       white
+urxvt.scrollBar:        false
+urxvt.pointerColor:     black
+urxvt.pointerColor2:    white
+urxvt.borderless:       true
+! URxvt*boldFont:         xft: DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font:             xft:DejaVu Sans Mono for Powerline:style=Book:size=8:antialias=true:hinting=true
+!URxvt*boldFont:         xft:DejaVu Sans Mono for Powerline:style=Bold:size=8
+!URxvt*font:             xft:Droid Sans Mono for Powerline:size=8:antialias=true:hinting=true
+!URxvt*font:             xft:Anonymice Powerline:size=9:antialias=true:hinting=true
+!URxvt*font:             xft:Inconsolata for Powerline:size=9
+!URxvt*font:             xft:Literation Mono Powerline:size=9
+!URxvt*font:             xft:Ubuntu Mono derivative Powerline:size=9
+URxvt*font:             xft:Meslo LG M DZ for Powerline:size=8
+URxvt*boldFont:         xft:Meslo LG M DZ for Powerline Bold:style=Bold:size=8
+!URxvt*font:             xft:Source Code Pro for Powerline:size=9:hinting=true
+!URxvt*font:             -misc-fixed-medium-*-*-*-12-*-100-100-c-*-*-*
+!URxvt*font:             -misc-fixed-medium-r-normal--13-100-100-100-c-80-*-8
+!URxvt*font:             8x16
+!URxvt*font:             xft:Meslo LG M DZ for Powerline:size=8
+
+#define darkestgray   #151515
+#define darkergray    #202020
+#define darkgray      #303030
+#define gray          #505050
+#define lightgray     #b0b0b0
+#define lightergray   #d0d0d0
+#define lightestgray  #e0e0e0
+#define white         #f5f5f5
+#define red           #ac4142
+#define orange        #d28445
+#define yellow        #f4bf75
+#define green         #90a959
+#define cyan          #75b5aa
+#define blue          #6a9fb5
+#define magenta       #aa759f
+#define brown         #8f5536
+
+
+*.foreground:   lightergray
+*.background:   darkestgray
+*.cursorColor:  lightergray
+*.color0:       darkestgray
+*.color1:       red
+*.color2:       green
+*.color3:       yellow
+*.color4:       blue
+*.color5:       magenta
+*.color6:       cyan
+*.color7:       lightergray
+*.color8:       gray
+*.color9:       orange
+*.color10:      darkergray
+*.color11:      darkgray
+*.color12:      lightgray
+*.color13:      lightestgray
+*.color14:      brown
+*.color15:      white
