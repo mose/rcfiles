@@ -16,48 +16,47 @@ urxvt.lineSpace:        0
 urxvt.xftAntialias:     true
 urxvt.saveLines:        12000
 
-urxvt.perl-ext-common:    default,matcher,font-size
+! load plugins
+urxvt.perl-ext-common:    default,matcher,font-size,notification
 
+! fonts resizing
 urxvt.keysym.C-plus:         perl:font-size:increase
 urxvt.keysym.C-minus:        perl:font-size:decrease
 urxvt.keysym.C-equal:        perl:font-size:reset
 
-urxvt.url-launcher:       /usr/bin/iceweasel
+! urls management
+urxvt.url-launcher:       /usr/bin/x-www-browser
 urxvt.underlinedURLs:     true
 urxvt.matcher.button:     1
 urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 urxvt.cutchars:           "`()'*[]{|}""'`"
 
+! for irssi
 urxvt.eightBitInput:      false
 urxvt.metaSendsEscape:    true
 
+! avoid ctrl-shift useless mode
 urxvt.iso14755_52:      false
 urxvt.iso14755:         false
 
-urxvt.depth:            32
-urxvt.background:       black
-urxvt.foreground:       white
 urxvt.scrollBar:        false
 urxvt.pointerColor:     black
 urxvt.pointerColor2:    white
 urxvt.borderless:       true
-! URxvt*boldFont:         xft: DejaVu Sans Mono:bold:pixelsize=12:antialias=true:hinting=true
-!URxvt*font:             xft:DejaVu Sans Mono for Powerline:style=Book:size=8:antialias=true:hinting=true
-!URxvt*boldFont:         xft:DejaVu Sans Mono for Powerline:style=Bold:size=8
-!URxvt*font:             xft:Droid Sans Mono for Powerline:size=8:antialias=true:hinting=true
-!URxvt*font:             xft:Anonymice Powerline:size=9:antialias=true:hinting=true
-!URxvt*font:             xft:Inconsolata for Powerline:size=9
-!URxvt*font:             xft:Literation Mono Powerline:size=9
-!URxvt*font:             xft:Ubuntu Mono derivative Powerline:size=9
-URxvt*font:             xft:Meslo LG M DZ for Powerline:size=8
-URxvt*boldFont:         xft:Meslo LG M DZ for Powerline:style=Bold:size=8
-!URxvt*font:             xft:Source Code Pro for Powerline:size=9:hinting=true
-!URxvt*font:             -misc-fixed-medium-*-*-*-12-*-100-100-c-*-*-*
-!URxvt*font:             -misc-fixed-medium-r-normal--13-100-100-100-c-80-*-8
-!URxvt*font:             8x16
-!URxvt*font:             xft:Meslo LG M DZ for Powerline:size=8
 
+! fonts
+urxvt.font:             xft:Meslo LG M DZ for Powerline:size=8
+urxvt.boldFont:         xft:Meslo LG M DZ for Powerline:style=Bold:size=8
+
+! notifications
+urxvt.urgentOnBell:    true
+urxvt.keysym.C-n:      perl:notify-toggle
+
+
+! colors
 #define darkestgray   #222222
+
+urxvt.depth:            32
 
 *.foreground:   azure
 *.background:   black
@@ -80,3 +79,4 @@ URxvt*boldFont:         xft:Meslo LG M DZ for Powerline:style=Bold:size=8
 *.color13:      DarkOrange2
 *.color14:      dodgerblue4
 *.color15:      ivory4
+
