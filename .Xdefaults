@@ -17,7 +17,7 @@ urxvt.xftAntialias:     true
 urxvt.saveLines:        12000
 
 ! load plugins
-urxvt.perl-ext-common:    default,matcher,font-size,notification
+urxvt.perl-ext-common:    default,matcher,font-size,notification,clipboard
 
 ! fonts resizing
 urxvt.keysym.C-plus:         perl:font-size:increase
@@ -30,6 +30,17 @@ urxvt.underlinedURLs:     true
 urxvt.matcher.button:     1
 urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 urxvt.cutchars:           "`()'*[]{|}""'`"
+
+! copypaste
+urxvt.copyCommand:    xclip -i -selection clipboard
+urxvt.pasteCommand:   xclip -o -selection clipboard
+urxvt.keysym.S-C-C:   perl:clipboard:copy
+urxvt.keysym.S-C-V:   perl:clipboard:paste
+urxvt.keysym.M-v:     perl:clipboard:paste_escaped
+
+! Unbreak zsh keys in URxvt
+urxvt.keysym.Home:    \033[1~
+urxvt.keysym.End:     \033[4~
 
 ! for irssi
 urxvt.eightBitInput:      false

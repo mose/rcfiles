@@ -18,3 +18,8 @@ or
     bash <(curl https://raw.githubusercontent.com/mose/rcfiles/master/install-server.sh)
 
 For only installing oh-my-zsh
+
+Settings for urxvt
+---------------------
+
+    apt-get install xclip
