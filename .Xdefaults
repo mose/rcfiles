@@ -69,7 +69,7 @@ urxvt.keysym.C-n:      perl:notify-toggle
 
 
 ! colors
-#define darkestgray   #222222
+! http://en.wikipedia.org/wiki/X11_color_names
 
 urxvt.depth:            32
 
@@ -77,21 +77,21 @@ urxvt.depth:            32
 *.background:   black
 *.cursorColor:  ivory
 
-*.color0:       #222222
+*.color0:       grey10
 *.color1:       peru
 *.color2:       darkseagreen3
-*.color3:       LightGoldenRod2
+*.color3:       lightgoldenrod2
 *.color4:       steelblue
 *.color5:       orange2
 *.color6:       dodgerblue
 *.color7:       snow
 
-*.color8:       LemonChiffon4
+*.color8:       lemonchiffon4
 *.color9:       sienna
-*.color10:      PaleGreen3
+*.color10:      palegreen3
 *.color11:      goldenrod1
 *.color12:      dimgrey
-*.color13:      DarkOrange2
+*.color13:      darkorange2
 *.color14:      dodgerblue4
 *.color15:      ivory4
 
