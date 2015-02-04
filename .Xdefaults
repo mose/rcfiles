@@ -70,6 +70,7 @@ urxvt.keysym.C-n:      perl:notify-toggle
 
 ! colors
 ! http://en.wikipedia.org/wiki/X11_color_names
+! be sure to have rxvt-unicode-256color installed
 
 urxvt.depth:            32
 
