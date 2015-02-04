@@ -27,7 +27,7 @@ urxvt.keysym.C-equal:        perl:font-size:reset
 ! urls management
 urxvt.url-launcher:       /usr/bin/x-www-browser
 urxvt.underlinedURLs:     true
-urxvt.matcher.button:     1
+urxvt.matcher.button:     3
 urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 urxvt.cutchars:           "`()'*[]{|}""'`"
 
@@ -39,8 +39,8 @@ urxvt.keysym.S-C-V:   perl:clipboard:paste
 urxvt.keysym.M-v:     perl:clipboard:paste_escaped
 
 ! google translate
-urxvt.keysym.C-M-4:   perl:gt:zh-en
-urxvt.keysym.C-M-5:   perl:gt:en-zh
+urxvt.keysym.C-4:   perl:gt:zh-en
+urxvt.keysym.C-5:   perl:gt:en-zh
 
 ! Unbreak zsh keys in URxvt
 urxvt.keysym.Home:    \033[1~
