@@ -17,7 +17,7 @@ urxvt.xftAntialias:     true
 urxvt.saveLines:        12000
 
 ! load plugins
-urxvt.perl-ext-common:    default,matcher,font-size,notification,clipboard
+urxvt.perl-ext-common:    default,matcher,font-size,notification,clipboard,gt
 
 ! fonts resizing
 urxvt.keysym.C-plus:         perl:font-size:increase
@@ -37,6 +37,10 @@ urxvt.pasteCommand:   xclip -o -selection clipboard
 urxvt.keysym.S-C-C:   perl:clipboard:copy
 urxvt.keysym.S-C-V:   perl:clipboard:paste
 urxvt.keysym.M-v:     perl:clipboard:paste_escaped
+
+! google translate
+urxvt.keysym.C-M-4:   perl:gt:zh-en
+urxvt.keysym.C-M-5:   perl:gt:en-zh
 
 ! Unbreak zsh keys in URxvt
 urxvt.keysym.Home:    \033[1~
@@ -73,7 +77,7 @@ urxvt.depth:            32
 *.background:   black
 *.cursorColor:  ivory
 
-*.color0:       darkestgray
+*.color0:       #222222
 *.color1:       peru
 *.color2:       darkseagreen3
 *.color3:       LightGoldenRod2
