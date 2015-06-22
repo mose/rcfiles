@@ -23,3 +23,4 @@ Settings for urxvt
 ---------------------
 
     apt-get install xclip
+
