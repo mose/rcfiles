@@ -32,47 +32,47 @@ urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 urxvt.cutchars:           "`()'*[]{|}""'`"
 
 ! copypaste
-urxvt.copyCommand:    xclip -i -selection clipboard
-urxvt.pasteCommand:   xclip -o -selection clipboard
-urxvt.keysym.S-C-C:   perl:clipboard:copy
-urxvt.keysym.S-C-V:   perl:clipboard:paste
-urxvt.keysym.M-v:     perl:clipboard:paste_escaped
+urxvt.copyCommand:     xclip -i -selection clipboard
+urxvt.pasteCommand:    xclip -o -selection clipboard
+urxvt.keysym.S-C-C:    perl:clipboard:copy
+urxvt.keysym.S-C-V:    perl:clipboard:paste
+urxvt.keysym.M-v:      perl:clipboard:paste_escaped
 
 ! google translate
-urxvt.keysym.C-4:   perl:gt:zh-en
-urxvt.keysym.C-5:   perl:gt:en-zh
+urxvt.keysym.C-4:      perl:gt:zh-en
+urxvt.keysym.C-5:      perl:gt:en-zh
 
 ! Unbreak zsh keys in URxvt
-urxvt.keysym.Home:    \033[1~
-urxvt.keysym.End:     \033[4~
+urxvt.keysym.Home:     \033[1~
+urxvt.keysym.End:      \033[4~
 
 ! for irssi
-urxvt.eightBitInput:      false
-urxvt.metaSendsEscape:    true
+urxvt.eightBitInput:   false
+urxvt.metaSendsEscape: true
 
 ! avoid ctrl-shift useless mode
-urxvt.iso14755_52:      false
-urxvt.iso14755:         false
+urxvt.iso14755_52:     false
+urxvt.iso14755:        false
 
-urxvt.scrollBar:        false
-urxvt.pointerColor:     black
-urxvt.pointerColor2:    white
-urxvt.borderless:       true
+urxvt.scrollBar:       false
+urxvt.pointerColor:    black
+urxvt.pointerColor2:   white
+urxvt.borderless:      true
 
 ! fonts
-urxvt.font:             xft:Meslo LG M DZ for Powerline:size=8
-urxvt.boldFont:         xft:Meslo LG M DZ for Powerline:style=Bold:size=8
+urxvt.font:            xft:Meslo LG M DZ for Powerline:size=8
+urxvt.boldFont:        xft:Meslo LG M DZ for Powerline:style=Bold:size=8
 
 ! notifications
 urxvt.urgentOnBell:    true
-urxvt.keysym.C-n:      perl:notify-toggle
+urxvt.keysym.S-C-n:    perl:notify-toggle
 
 
 ! colors
 ! http://en.wikipedia.org/wiki/X11_color_names
 ! be sure to have rxvt-unicode-256color installed
 
-urxvt.depth:            32
+urxvt.depth:    32
 
 *.foreground:   azure
 *.background:   black
