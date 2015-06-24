@@ -24,3 +24,10 @@ Settings for urxvt
 
     apt-get install xclip
 
+Desktop
+--------
+
+Get your desktop up to date with
+- .Xdefaults
+- .i3/config
+- .urxvt
