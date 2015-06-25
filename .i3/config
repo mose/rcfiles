@@ -183,9 +183,9 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 #
 # launch basic apps
-exec --no-starup-id nm-applet
-exec --no-startup-id dunst
-exec parcellite
+#exec --no-starup-id nm-applet
+#exec --no-startup-id dunst
+#exec parcellite
 
 # locking
 bindsym $mod+l exec "i3lock -d -c 020406"
