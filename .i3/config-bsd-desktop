@@ -190,4 +190,4 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 # locking
 bindsym $mod+l exec "i3lock -d -c 020406"
 exec xautolock -detectsleep -time 10 -locker 'i3lock -d -c 020406' &
-
+exec setxkbmap -option terminate:ctrl_alt_bksp
