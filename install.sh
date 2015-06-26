@@ -96,11 +96,11 @@ if [ ! -f $HOME/bin/ps_mem ]; then
   chmod +x $HOME/bin/ps_mem
 fi
 if [ ! -f $HOME/bin/ps_mem.py ]; then
-  curl -o $HOME/bin/ps_mem.py https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
+  curl -o $HOME/bin/ps_mem.py https://raw.githubusercontent.com/rcfiles/master/bin/ps_mem.py
   chmod +x $HOME/bin/ps_mem.py
 fi
 if [ ! -f $HOME/bin/256.sh ]; then
-  curl -o $HOME/bin/256.sh https://raw.githubusercontent.com/pixelb/ps_mem/master/256.sh
+  curl -o $HOME/bin/256.sh https://raw.githubusercontent.com/rcfiles/master/bin/256.sh
   chmod +x $HOME/bin/256.sh
 fi
 
