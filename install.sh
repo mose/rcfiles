@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get install git zsh vim 
+sudo apt-get install git zsh vim xautolock parcellite feh rxvt-unicode-256color
 
 TERM=xterm-256color
 BG="187"
