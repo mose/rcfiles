@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt-get update
+sudo apt-get install git zsh vim 
+
 TERM=xterm-256color
 BG="187"
 FG="black"
@@ -52,7 +55,7 @@ export PATH=.:./bin:\$HOME/bin:\$PATH
 export EDITOR=vim
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-" >> .zshrc
+" >> $HOME/.zshrc
 (crontab -l; echo "0 0 * * 0 cd $HOME/.oh-my-zsh && git pull --rebase origin master &> /dev/null") | crontab
 
 # change default shell for me
@@ -62,16 +65,15 @@ sudo usermod -s /bin/zsh $USER
 # https://github.com/kaochenlong/eddie-vim
 sudo apt-get -y install exuberant-ctags
 
-if [ ! -d .vim ]; then
-  git clone git://github.com/kaochenlong/eddie-vim.git .vim
-  cd .vim
+if [ ! -d $HOME/.vim ]; then
+  git clone git://github.com/kaochenlong/eddie-vim.git $HOME/.vim
+  cd $HOME/.vim
   # fix https://github.com/kaochenlong/eddie-vim/issues/9
   sed -i "s~git@github.com:~git://github.com/~" .gitmodules
   # fix https://github.com/kaochenlong/eddie-vim/pull/7
   git submodule add git://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
   ./update.sh
-  cd $HOME
-  cp .vim/easy-vimrc $HOME/.vimrc
+  cp $HOME/.vim/easy-vimrc $HOME/.vimrc
   sed -i "s~call pathogen#incubate()~call pathogen#infect('bundle/{}')~" $HOME/.vimrc
   (crontab -l; echo "05 0 * * 0 cd $HOME/.vim && ./update.sh &> /dev/null") | crontab
 fi
