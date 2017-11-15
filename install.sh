@@ -1,9 +1,12 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color
+sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color htop strace mtr-tiny
 # useful for ibus-pynin
 # sudo apt install ibus-libpinyin ibus-pinyin ibus-m17n ibus-table pinyin-database
+
+# for french accents
+# http://marin.jb.free.fr/qwerty-fr/
 
 TERM=xterm-256color
 BG="187"
