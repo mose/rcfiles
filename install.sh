@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color htop strace mtr-tiny
+sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color htop strace mtr-tiny pass tree
 # useful for ibus-pynin
 # sudo apt install ibus-libpinyin ibus-pinyin ibus-m17n ibus-table pinyin-database
 
