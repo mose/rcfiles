@@ -1,12 +1,20 @@
 #!/bin/bash
 
+# install sublimetext3
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
 sudo apt-get update
-sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color htop strace mtr-tiny pass tree xdotool dirmngr
+sudo apt install git zsh vim xautolock parcellite feh rxvt-unicode-256color htop strace mtr-tiny pass tree xdotool dirmngr sublime-text
+
 # useful for ibus-pynin
 # sudo apt install ibus-libpinyin ibus-pinyin ibus-m17n ibus-table pinyin-database
 
 # for french accents
 # http://marin.jb.free.fr/qwerty-fr/
+
+
 
 TERM=xterm-256color
 BG="187"
