@@ -158,7 +158,7 @@ bindsym $mod+Home mode "$mode_system"
 # finds out, if available)
 bar {
   status_command i3status
-  font pango:Source Code Pro Bold 12
+  font pango:Source Code Pro Bold 11
 }
 
 exec xsetroot -solid "#121314"
