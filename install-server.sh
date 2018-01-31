@@ -29,8 +29,8 @@ ask_color() {
   fi
 }
 
-command -v curl &> /dev/null || sudo apt-get -y install curl
-command -v git &> /dev/null || sudo apt-get -y install git
+sudo apt-get update
+sudo apt-get -y install zsh vim curl git tree
 
 # install oh-my-zsh and custom themes
 # https://github.com/robbyrussell/oh-my-zsh
