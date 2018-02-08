@@ -30,7 +30,14 @@ ask_color() {
 }
 
 sudo apt-get update
-sudo apt-get -y install zsh vim curl git tree
+sudo apt-get -y install zsh vim curl git tree ufw
+
+# firewalling
+sudo ufw enable ssh
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw disable
+sudo ufw enable
 
 # install oh-my-zsh and custom themes
 # https://github.com/robbyrussell/oh-my-zsh
